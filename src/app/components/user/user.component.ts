@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-user',
@@ -9,15 +10,17 @@ export class UserComponent implements OnInit {
 
   name:string;
   age:number;
+  email:string;
   address:Address;
   hobbies:string[];
 
-  constructor() { 
+  constructor(private dataService:DataService) { 
   }
 
   ngOnInit() {
     this.name = 'Monika Thotha';
     this.age = 30;
+    this.email = 'test@test.com';
     this.address = {
       street:'149 Santa Lucia Ave',
       city:'San Bruno'

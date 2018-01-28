@@ -1,12 +1,12 @@
-<p>user {{name}}</p>
-<p>age {{age}}</p>
+<p>user: {{name}}</p>
+<p>age: {{age}}</p>
+<p>email: {{email}}</p>
 <p>Address: {{address.street}}, {{address.city}}</p>
 
 <button (click)="onClick()">Click Me</button>
 <form (submit) = "addHobby(newHobby.value)">
-  <label>Hobby</label>
+  <label>Add new Hobby</label>
   <input type="text" #newHobby>
-  <input type="number" #newHobby>
 </form>
 
 <h1>Hobbies</h1>
@@ -16,3 +16,34 @@
     <button (click)="onDelete(i)">Delete</button>
   </li>
 </ul>
+
+<h1>Edit User</h1>
+<form>
+
+  <div>
+    <label for="name">Name: </label>
+    <input type="text" [(ngModel)]="name" name="name">
+  </div>
+
+  <div>
+      <label for="Email">Email: </label>
+      <input type="text" [(ngModel)]="email" name="email">
+  </div>
+
+  <div>
+      <label for="Age">Age: </label>
+      <input type="number" [(ngModel)]="age" name="age">
+  </div>
+
+  <div>
+    <label for="street">Street: </label>
+    <input type="text" [(ngModel)]="address.street" name="street">
+  </div>
+
+  <div>
+    <label for="city">City: </label>
+    <input type="text" [(ngModel)]="address.city" name="address.city">
+  </div>
+    
+</form>
+
